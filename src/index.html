@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> [DAWR] Tarea 1 - J. Montes & J. Pérez </title>
+    </head>
+
+    <body>
+        <div class="titleBar">
+            <table style="width:100%">
+                <tr> <!-- Title bar -->
+                    <td style="width:260px">
+                        <button id="logobutton" style="border:none; background:none; font-weight:bold; color:#ffffff">
+                            <table>
+                                <tr>
+                                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Osu%21Logo_%282015%29.png" height="50px" width="50px"></td>
+                                    <td align="right" style="vertical-align:middle; font-size:200%"><span style="width:200px">&nbsposu! Score Stalker</span></td>
+                                </tr>
+                            </table>
+                        </button>
+                    </td>
+                    <td align="right" style="vertical-align:middle; font-size:150%">
+                        <button id="byuserbutton" style="border:none; padding:0; background:none; font-size:80%; color:#ffffff">Search by User</button>&nbsp&nbsp&nbsp&nbsp
+                        <button id="bymapbutton" style="border:none; padding:0; background:none; font-size:80%; color: #ffffff">Search by Map</button>&nbsp
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="searchbyuser"> <!-- Search by user -->
+            <div style="padding:10px"> <!-- User best submit bar -->
+                Username: <input id="username" value="Catulus"></input><span style="padding-left:2em">
+                Display <input id ="scorelimit" value="10" style="width:3em"></input> scores</span><span style="padding-left:2em">
+                Mode: <select name="modeSelect" id="modeselect">
+                    <option value=0>osu!</option>
+                    <option value=1>osu!taiko</option>
+                    <option value=2>osu!catch</option>
+                    <option value=3>osu!mania</option>
+                </select><span style="padding-left:2em"></span>
+                <button id="submit">Submit</button></span> <br/>
+            </div>
+
+            <!-- User stats -->
+            <div style="padding: 10px; background-color: #303030; display: none" id="userdata_display">
+                <table style="width:100%">
+                    <tr>
+                        <td style="width:120px" align="center" rowspan="5"><img id="userdata_image" height="110px" width="110px" padding="5px"></td>
+                        <td><b>&nbsp<span id="userdata_name"></span></b></td>
+                        <td style="width:150px"><span><b>Ranked Score</b></span></td>
+                        <td align="right" style="width:250px"><span id="userdata_rankedscore"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span><b>Hit Accuracy</b></span></td>
+                        <td align="right"><span id="userdata_accuracy"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span><b>Play Count</b></span></td>
+                        <td align="right"><span id="userdata_playcount"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><span><b>Ranking</b></span></td>
+                        <td align="right"><span id="userdata_ranking"></span></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp<img id="userdata_flag" padding="5px" width="40px"></td>
+                        <td><span><b>Performance Points</b></span></td>
+                        <td align="right"><span id="userdata_pp"></span></td>
+                    </tr>  
+                </table>
+
+                <hr>
+
+                <div id="scores_container"> <!-- User best scores list -->
+
+                </div>
+            </div>
+        </div>
+
+        <div id="searchbymap" style="display: none"> <!-- Search by beatmap -->
+            <div style="padding:10px"> <!-- Map submit bar -->
+                Beatmap ID: <input id="mapid" value="1822957"></input><span style="padding-left:2em">
+                Display <input id ="mapscorelimit" value="10" style="width:3em"></input> scores</span><span style="padding-left:2em">
+                Mode: <select name="modeSelect" id="mapmodeselect">
+                    <option value=0>osu!</option>
+                    <option value=1>osu!taiko</option>
+                    <option value=2>osu!catch</option>
+                    <option value=3>osu!mania</option>
+                </select><span style="padding-left:2em"></span>
+                <button id="mapsubmit">Submit</button></span> <br/>
+            </div>
+
+            <!-- Map stats -->
+            <div id="mapdata_display" style="display: none">
+                <div class="mapContainer">
+                    <img style="width:100%" id="mapdata_image">
+                    <table class="mapStats">
+                        <tr>
+                            <td><b>&nbsp<span id="mapdata_name" style="font-size:150%"></span></b></td>
+                            <td></td>
+                            <td colspan="2" style="vertical-align: middle" align="center" id="mapdata_audio"><audio autoplay controls  style="height:25px; width:15vw"><source type="audio/mpeg"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="color:#ffa500">&nbsp<span id="mapdata_diff"></span>&nbsp&nbsp</td>
+                            <td></td>
+                            <td><b>Length</b></td>
+                            <td align="right"><span id="mapdata_length"></span>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp<span id="mapdata_artist"></span></td>
+                            <td></td>
+                            <td><b>BPM</b></td>
+                            <td align="right"><span id="mapdata_bpm"></span>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td>&nbspmapped by&nbsp<span id="mapdata_creator"></span></td>
+                            <td></td>
+                            <td><b>Star Difficulty</b></td>
+                            <td align="right"><span id="mapdata_sr"></span>&nbsp</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div style="padding:10px">
+                    <hr>
+
+                    <div id="mapscore_container"></div> <!-- Map best scores list -->
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

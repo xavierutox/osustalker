@@ -1,0 +1,72 @@
+.header {
+    font-size: 3rem
+}
+
+.subheader {
+    font-size: 2rem
+}
+
+body > * {
+    font-family: Helvetica Neue;
+    font-size: 1rem;
+    background-color: #404040;
+    color: #FFFFFF;
+}
+
+.titleBar {
+    height: 70px;
+    width: 100%;
+    background-color: #C05080;
+    padding: 10px;
+    color: #FFFFFF;
+}
+
+td {
+    font-size: 0.9rem
+}
+
+.hline {
+    width: 100%;
+    height: 5px;
+    border: 5px #404040;
+}
+
+.score {
+    background-color: #505050;
+    padding: 5px;
+    width: 100%;
+}
+
+.mapContainer {
+    position: relative;
+    margin: 0 auto;
+    padding: 1%;
+    width: 100%
+}
+
+.mapContainer .mapStats {
+    position: absolute;
+    background: rgba(60, 60, 60, 0.70);
+    bottom: 4.3%;
+    left: 1%;
+    color: #FFFFFF;
+    width: 98.09%;
+}
+
+.mapScore {
+    width: 12.5%;
+    text-align: center;
+}
+
+.mapScore_header {
+    width: 25%;
+    text-align: center;
+}
+
+.borderlessButton {
+    border: none;
+    background: none;
+    color: #ffffff;
+    text-decoration: none;
+}
+
