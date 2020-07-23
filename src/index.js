@@ -5,7 +5,7 @@ let api = 'https://osu.ppy.sh/api/'
 let userBest = 'get_user_best?'
 let userData = "get_user?"
 let mapData = "get_beatmaps?"
-let key = 'k=a79d9c01a3b012fc0c0bab91aaa7d09e8b76492b'
+let key = 'k=[apikey]'
 let imageLink = "https://a.ppy.sh/"
 let beatmapBG1 = "https://assets.ppy.sh/beatmaps/"
 let beatmapBG2 = "/covers/cover@2x.jpg"
